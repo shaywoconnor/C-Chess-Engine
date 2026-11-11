@@ -35,7 +35,9 @@ void board_build_pos(Board* board, const char* FEN)
     }
     if ('0' <= c && c <= '8')
     {
-      read_pos += (c - '0');
+      uint8_t count = c - '0';
+      board->empty |= ((1ULL << count) - 1) << read_pos;
+      read_pos += count;
       FEN++;
       continue;
     }

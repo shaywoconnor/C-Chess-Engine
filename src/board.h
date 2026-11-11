@@ -75,6 +75,7 @@ typedef uint64_t bit_board_t;
 struct Board
 {
   bit_board_t pieces[2][6];
+  bit_board_t empty;
   board_info_t info;
 };
 typedef struct Board Board;
